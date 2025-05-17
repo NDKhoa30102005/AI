@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 =======
 # AI Puzzle 8 - Trò chơi mô phỏng thuật toán AI
 
@@ -82,4 +80,3 @@ Mọi đóng góp, ý kiến hoặc báo lỗi xin gửi về [GitHub repository
 
 ## Tác giả
 - Nguyễn Đăng Khoa
->>>>>>> 29ba158 (Cập nhật README.md)
