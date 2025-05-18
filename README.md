@@ -209,7 +209,7 @@ Reinforcement Learning (RL) là phương pháp học thông qua tương tác v�
 
 ## 6. Tài liệu và demo
 
-- [Video demo và tài liệu chi tiết trên Google Drive](https://drive.google.com/file/d/1Veug8aFqajuwx4BhlBX1U4o38Pop-ms0/view?usp=drive_link)
+- [Video demo chi tiết trên Google Drive](https://drive.google.com/file/d/1Veug8aFqajuwx4BhlBX1U4o38Pop-ms0/view?usp=drive_link)
 
 # Sinh viên: Nguyễn Đăng Khoa - 23110242
 
