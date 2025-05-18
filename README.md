@@ -163,6 +163,9 @@ Tóm lại thì ở nhóm thuật toán local search có thể tìm ra lời gi�
 
 - Min Conflict bắt đầu với một gán ngẫu nhiên (có thể sai). Ở mỗi bước, chọn một biến đang vi phạm ràng buộc và gán lại giá trị sao cho số xung đột là ít nhất.
 
+<img src="images/csp_search.gif" alt="CSP Search" width="1000"/>
+
+
 #### Nhận xét
 
 - Backtracking thuật toán có tốc độ chậm, dễ quay lui nhiều lần nhưng đảm bảo tìm được lời giải nếu có.
