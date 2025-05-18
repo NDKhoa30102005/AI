@@ -207,6 +207,9 @@ Reinforcement Learning (RL) là phương pháp học thông qua tương tác v�
 #### Nhận xét
 - Thuật toán Q-learning mang lại lời giải tốt nhất sau khi học nhưng cần thời gian tìm kiếm quá lâu. Dù vậy Q-learning không tối ưu trong bài toán puzzle do môi trường không quá phức tạp.
 
-## 5. Tác giả
+## 6. Tài liệu và demo
+
+- [Video demo và tài liệu chi tiết trên Google Drive](https://drive.google.com/file/d/1Veug8aFqajuwx4BhlBX1U4o38Pop-ms0/view?usp=drive_link)
+
 # Sinh viên: Nguyễn Đăng Khoa - 23110242
 
