@@ -25,9 +25,7 @@
 - Giao diện trực quan với Pygame, dễ dàng thao tác và quan sát từng bước giải.
 - Cho phép nhập trạng thái tùy ý, xáo trộn ngẫu nhiên, hoặc chọn trạng thái dễ.
 - Hiển thị chi phí, thời gian thực thi và các bước di chuyển.
-
-<img src="images/giaodien.png" alt="Giao diện" width="400"/>
-
+![](images/giaodien.png)
 ## 3. Cách sử dụng
 1. Cài đặt Python và thư viện Pygame:
    ```bash
@@ -61,7 +59,7 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 - IDDFS (Iterative Deepening DFS)
 - UCS (Uniform Cost Search)
 
-<img src="images/Uninformed_Search.gif" alt="Uninformed Search Demo" width="400"/>
+![demo](images/Uninformed_Search.gif)
 
 ### Informed Search Algorithms
 
@@ -69,7 +67,7 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 - IDA*
 - Greedy Best-First Search
 
-<img src="images/InformedSearch.gif" alt="Informed Search Demo" width="400"/>
+![demo](images\InformedSearch.gif)
 
 ### Local Search
 
@@ -78,14 +76,14 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 - Genetic Algorithm
 - Beam Search
 
-<img src="images/localsearch.gif" alt="Local Search Demo" width="400"/>
+![demo](images\localsearch.gif)
 
 ### Searching in Complex Environments
 
 - Belief Search
 - Partial Order Search (POS)
 
-<img src="images/Belief.gif" alt="Belief Search Demo" width="400"/>
+![demo](images\belief.gif)
 
 ### Constraint Satisfaction Problems
 
