@@ -26,7 +26,7 @@
 - Cho phép nhập trạng thái tùy ý, xáo trộn ngẫu nhiên, hoặc chọn trạng thái dễ.
 - Hiển thị chi phí, thời gian thực thi và các bước di chuyển.
 
-<img src="images/giaodien.png" alt="Giao diện" width="400"/>
+<img src="images/giaodien.png" alt="Giao diện" width="1000"/>
 
 ## 3. Cách sử dụng
 1. Cài đặt Python và thư viện Pygame:
