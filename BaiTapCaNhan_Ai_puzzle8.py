@@ -1282,6 +1282,6 @@ while True:
         draw_grid(x_state, y_state, state, None)
         STATE = state
         pygame.display.flip()
-        pygame.time.delay(10)
+        pygame.time.delay(100)
 
     pygame.display.update()
