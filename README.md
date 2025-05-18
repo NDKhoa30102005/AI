@@ -95,39 +95,109 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 - Greedy Best-First Search Nhanh, tập trung mở rộng các trạng thái gần đich nhưng không đảm bảo lời giải tối ưu dễ mắc vào những không gian trạng thái phức tạp
 - IDA* là một giải pháp thay thế cho A* khi bộ nhớ bị hạn chế, có thể thời gian chạy sẽ lâu hơn.
 
-Tóm lại các thuật toán tìm kiếm có thông tin có sử dụng hàm tính chi phí (heuristic) giúp giảm số node phải duyệt trong đáng kể so nhóm thuật toán
+Tóm lại các thuật toán tìm kiếm có thông tin có sử dụng hàm tính chi phí (heuristic) giúp giảm số node phải duyệt trong đáng kể so nhóm thuật toán Uninformed Search Algorithms đặt biệt là trong bài toán puzzle 8 này
+ 
 
 ### Local Search
 
-- Hill Climbing (HC, SHC, SAHC)
-- Simulated Annealing (SA)
-- Genetic Algorithm
-- Beam Search
+- Hill Climbing (leo đồi đơn giản): luôn chọn trạng thái "cao" hơn (tốt hơn) theo hàm heuristic.
+
+- Steepest-Ascent hill-climbing (leo đồi dốc nhất): luôn chọn những lân cận 
+gần nhất với trạng thái mục tiêu
+
+- Stochastic hill Climbing (Leo đồi ngẫu nhiên): ở thuật toán này thay vì chọn chọn ra những lân cận tốt nhất thì nó sẽ chọn ngẫu nhiên một hàng xóm nếu trạng thái đó tốt hơn hiện tại.
+
+- Simulated Annealing là sự kết hợp của hai kỹ thuật “hill climbing” (leo đồi) và “pure random walk” (bước đi ngẫu nhiên thuần túy). Kỹ thuật hill climbing giúp tìm giá trị cực trị toàn cục, còn kỹ thuật pure random walk giúp tăng hiệu quả tìm kiếm giá trị tối ưu. Nếu giải pháp mơi không tốt hơn giải pháp củ có thể giữ lại với xác suất $P = e^{-\Delta E / T}$
+
+- Genetic Algorithm (GA) — hay Thuật toán di truyền — là một thuật toán tối ưu hóa và tìm kiếm dựa trên quá trình tiến hóa tự nhiên của sinh vật do Charles Darwin đề xuất: chọn lọc tự nhiên và di truyền học.
+   - GA mô phỏng cách quần thể sinh vật tiến hóa qua các thế hệ để tìm ra cá thể tốt nhất (lời giải tối ưu). Các thuật toán này sử dụng các phép toán tương tự như:
+
+   - Chọn lọc (Selection): chọn các cá thể tốt để sinh sản.
+
+   - Lai ghép (Crossover): kết hợp thông tin di truyền từ hai cá thể để tạo ra thế hệ mới.
+
+   - Đột biến (Mutation): thay đổi ngẫu nhiên một phần thông tin để duy trì đa dạng.
+
+
+- Beam Search: chỉ mở rộng một số trạng thái tốt nhất tại mỗi bước.
 
 <img src="images/localsearch.gif" alt="Local Search Demo" width="1000"/>
 
+#### Nhận xét
+
+- Hill Climbing, Steepest-Ascent hill-climbing, Stochastic hill Climbing là các thuật toán đơn giản trong bài toán dễ nhưng nhược điểm là rất dễ mắc kẹt tại các cực trị cục bộ không thể giải được các thái có trạng thái ban đầu khó không phù hợp với 8 puzzle.
+
+- Slimulated Annealing có cải tiến hơn so với hill climbing có khả năng thoát khỏi những cực trị cục bộ nhưng cần tinh chỉnh và thiết lập nhiệt độ và lịch giảm nhiệt độ phù hợp với bài toán của mình. Có thể không tìm được lời giải, không ổn định với 8 puzzle.
+
+- Beam Search có ưu điểm là giúp hạn chế số lượng trạng thái cần mở rộng giúp tiết kiệm bộ nhớ nhưng dễ bỏ lở các lời giải do mở rộng hạn chế. Dù vậy nhưng thuật toán này mang lại tốc độ giải quyết bài toán rất nhanh.
+
+- Genetic Algorithm phù hợp cho các bài toán khó mô hình hóa chính xác, có không gian lời giải lớn, có thể thoát khỏi cực trị địa phương. Nhược điểm hiệu suất phải phụ thuộc vào tham số ban đầu như kích thước quần thể, xác suất lai/đột biến... cần tinh chỉnh cho phù hợp với bài toán. Thường chạy rất chậm nếu không tối ưu tốt và không đảm bảo tìm được lời giải.
+
+Tóm lại thì ở nhóm thuật toán local search có thể tìm ra lời giải nhanh trong một số trường hợp nhưng thường thì dễ mắt kẹt ở các giá trị cực trị cục bộ. Với 8 puzzle thì nhóm thuật toán này chỉ nên dùng để tham khảo.
+
 ### Searching in Complex Environments
 
-- Belief Search
-- Partial Order Search (POS)
+- Belief Search: Thay vì tìm kiếm trên các trạng thái xác định, thuật toán tìm trên danh sách "trạng thái niềm tin"(belief state) tức là tập hợp các trạng thái mà agent không biết mình đang ở trạng thái nào. Thuật toán sẽ thực hiện cùng 1 hành động niềm tin cho các trạng thái niềm tin ban đầu để tạo ra một danh sách trạng thái niềm tin mới thực hiện đến khi nào tất cả các trạng thái ban đầu đều là đích. Có thể dùng BFS, DFS hay A* để tìm kiếm.
+
+- Partial Order Search (POS) Không cần xác định thứ tự đầy đủ các hành động, mà chỉ xác định thứ tự cục bộ cần thiết giữa các hành động (partial order). Điều này giúp linh hoạt hơn và tránh các thứ tự dư thừa.
+
+- And Or Search:Thay vì tìm một đường đi tuyến tính (như trong OR-tree), ta cần tìm một cây kế hoạch.
+
+   - AND-nút: Tất cả các con phải được giải.
+   - OR-nút: Chỉ cần một trong số con được giải.
 
 <img src="images/Belief.gif" alt="Belief Search Demo" width="1000"/>
 
+#### Nhận xét
+- Belief search thuật toán này thật chất ko phù hợp với bài toán 8 puzzle bời mình luôn biết được trạng thái hoàn toàn. Thuật toán chạy rất lâu và tốn bộ nhớ vì duyệt qua và lưu rất nhiều trạng thái niềm phụ thuộc vào số trạng thái niềm tin ban đầu nhưng vẫn đảm bảo tìm được đường đi.
+
+- POS là lựa chọn hợp lý nhất nếu muốn cân bằng giữa hiệu suất xử lý và quy mô không gian trạng thái, nhờ khả năng quan sát một phần giúp loại trừ sớm các khả năng sai lệch.
+
+- AND-OR Search có tốc độ xử lý nhanh nhưng lại phát sinh nhiều nhánh không cần thiết, thích hợp hơn khi trạng thái ban đầu đã gần sát mục tiêu và không yêu cầu thu hẹp không gian tìm kiếm.
+
 ### Constraint Satisfaction Problems
 
-- Min Conflict
-- And-Or Search
-- Backtracking, Backtracking Forward
+- Backtracking duyệt từng biến, gán giá trị cho biến đó. Nếu phát hiện vi phạm ràng buộc → quay lui (backtrack). Tiếp tục thử giá trị khác cho biến trước đó
+
+- Backtracking Forward mỗi khi gán giá trị cho một biến, loại bỏ những giá trị không hợp lệ trong miền giá trị của các biến chưa gán Nếu một biến chưa gán có miền trống (không còn giá trị khả thi) → backtrack sớm.
+
+- Min Conflict bắt đầu với một gán ngẫu nhiên (có thể sai). Ở mỗi bước, chọn một biến đang vi phạm ràng buộc và gán lại giá trị sao cho số xung đột là ít nhất.
+
+#### Nhận xét
+
+- Backtracking thuật toán có tốc độ chậm, dễ quay lui nhiều lần nhưng đảm bảo tìm được lời giải nếu có.
+
+- Backtracking Forward cái tiến hơn so với Backtracking thông thường giảm được số lần quay lui không cần thiết, phát hiện sớm sự mâu thuẫn nhờ kiểm tra trước. Dù vậy thì thuật toán chỉ mang lại cải thiện nhỏ so với backtracking thuần túy.
+
+- Min Conflict có ưu điểm là thường giải rất nhanh cho bài toán lớn nhưng có thể kẹt tại các cực trị cục bộ không tìm ra được giải pháp.
+
 
 ### Reinforcement Learning
- 
-- Q-learning
+Reinforcement Learning (RL) là phương pháp học thông qua tương tác với môi trường. Tác tử (agent) học cách hành động thông qua thử và sai, nhận lại phần thưởng (reward) cho các hành động và dần dần học được chính sách tối ưu.
+
+- Mô hình RL cơ bản bao gồm:
+
+   - Agent: tác tử thực hiện hành động.
+
+   - Environment: môi trường (ví dụ: lưới 8-puzzle).
+
+   - State (trạng thái): tình huống hiện tại của bài toán.
+
+   - Action (hành động): di chuyển các ô.
+
+   - Reward (phần thưởng): thường là âm cho mỗi bước đi (để khuyến khích giải nhanh).
+
+   - Policy (chính sách): chiến lược chọn hành động.
+
+   - Value Function: giá trị kỳ vọng từ một trạng thái.
+
+- Q-learning: xây dựng bảng Q[state][action] để học giá trị của từng hành động ở mỗi trạng thái.
 
 <img src="images/q_learning.gif" alt="Q-learning Search Demo" width="800"/>
 
+#### Nhận xét
+- Thuật toán Q-learning mang lại lời giải tốt nhất sau khi học nhưng cần thời gian tìm kiếm quá lâu. Dù vậy Q-learning không tối ưu trong bài toán puzzle do môi trường không quá phức tạp.
 
-## Đóng góp
-Mọi đóng góp, ý kiến hoặc báo lỗi xin gửi về [GitHub repository](https://github.com/NDKhoa30102005/AI).
+## 5. Tác giả
+# Sinh viên: Nguyễn Đăng Khoa - 23110242
 
-## Tác giả
-- Nguyễn Đăng Khoa
