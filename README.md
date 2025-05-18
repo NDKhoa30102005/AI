@@ -202,7 +202,7 @@ Reinforcement Learning (RL) là phương pháp học thông qua tương tác v�
 
 - Q-learning: xây dựng bảng Q[state][action] để học giá trị của từng hành động ở mỗi trạng thái.
 
-<img src="images/q_learning.gif" alt="Q-learning Search Demo" width="800"/>
+<img src="images/q_learning.gif" alt="Q-learning Search Demo" width="500"/>
 
 #### Nhận xét
 - Thuật toán Q-learning mang lại lời giải tốt nhất sau khi học nhưng cần thời gian tìm kiếm quá lâu. Dù vậy Q-learning không tối ưu trong bài toán puzzle do môi trường không quá phức tạp.
