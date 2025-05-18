@@ -65,6 +65,8 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 - Iterative Deepening DFS (IDDFS): kết hợp giữa DFS và BFS bằng cách tìm theo mức sâu giới hạn tăng dần.
 
 <img src="images/Uninformed_Search.gif" alt="Uninformed Search Demo" width="1000"/>
+<img src="images/bieudo_uninformed.png" alt="Uninformed Search Demo" width="1000"/>
+
 
 #### Nhận xét
 
@@ -88,6 +90,8 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 - Tổng khoảng cách Manhattan
 
 <img src="images/InformedSearch.gif" alt="Informed Search Demo" width="1000"/>
+<img src="images/bieudo_informed.png" alt="Informed Search Demo" width="1000"/>
+
 
 #### Nhận xét
 
@@ -122,6 +126,7 @@ gần nhất với trạng thái mục tiêu
 - Beam Search: chỉ mở rộng một số trạng thái tốt nhất tại mỗi bước.
 
 <img src="images/localsearch.gif" alt="Local Search Demo" width="1000"/>
+<img src="images/bieudo_local.png" alt="Local Search Demo" width="1000"/>
 
 #### Nhận xét
 
@@ -164,8 +169,9 @@ Tóm lại thì ở nhóm thuật toán local search có thể tìm ra lời gi�
 - Min Conflict bắt đầu với một gán ngẫu nhiên (có thể sai). Ở mỗi bước, chọn một biến đang vi phạm ràng buộc và gán lại giá trị sao cho số xung đột là ít nhất.
 
 <img src="images/csp_search.gif" alt="CSP Search" width="1000"/>
+<img src="images/bieudo_backtrack.png" alt="CSP Search" width="1000"/>
 
-
+   
 #### Nhận xét
 
 - Backtracking thuật toán có tốc độ chậm, dễ quay lui nhiều lần nhưng đảm bảo tìm được lời giải nếu có.
