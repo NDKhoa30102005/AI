@@ -56,20 +56,46 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 
 ### Uninformed Search Algorithms
 
-- BFS (Breadth-First Search)
-- DFS (Depth-First Search)
-- IDDFS (Iterative Deepening DFS)
-- UCS (Uniform Cost Search)
+- Breadth-First Search (BFS): duyệt theo chiều rộng, mở rộng các trạng thái theo từng lớp.
 
-<img src="images/Uninformed_Search.gif" alt="Uninformed Search Demo" width="600"/>
+- Depth-First Search (DFS): duyệt theo chiều sâu, đi càng xa càng tốt theo một nhánh rồi mới quay lại.
+
+- Uniform Cost Search (UCS): mở rộng nút có chi phí nhỏ nhất từ gốc đến trạng thái đó.
+
+- Iterative Deepening DFS (IDDFS): kết hợp giữa DFS và BFS bằng cách tìm theo mức sâu giới hạn tăng dần.
+
+<img src="images/Uninformed_Search.gif" alt="Uninformed Search Demo" width="1000"/>
+
+#### Nhận xét
+
+-  BFS tìm được lời giải ngắn nhất nếu chi phí di chuyển đồng đều nhưng rất tốn bộ nhớ và chạy chậm khi độ sâu tăng chỉ phù hợp cho nhưng bài toán nhỏ.
+-  DFS có ưu điểm là ít tốn bộ nhớ hơn chạy nhanh hơn BFS nhưng dễ rơi vào các nhanh sâu vô ích không đảm bảo tìm được lời giải tốt nhất.
+-  UCS luôn tìm ra lời giải tối ưu nếu chi phí chính xác nhưng nó có hiệu suất kém nếu không gian tìm kiếm lớn
+- IDDFS là sự kết hợp ưu điểm của BFS và DFS ít tốn bộ nhớ hơn BFS nhưng phải lặp lại nhiều lần đôi khi không hiệu quả chỉ thanh thế BFS khi bộ nhớ hạn chế.
 
 ### Informed Search Algorithms
 
-- A*
-- IDA*
-- Greedy Best-First Search
+- Greedy Best-First Search: chọn trạng thái có giá trị heuristic nhỏ nhất (tức gần mục tiêu nhất).
 
-<img src="images/InformedSearch.gif" alt="Informed Search Demo" width="600"/>
+- A*: kết hợp giữa chi phí từ gốc đến hiện tại (g(n)) và ước lượng chi phí đến đích (h(n)) → f(n) = g(n) + h(n).
+
+- IDA*: phiên bản lặp sâu dần của A* để tiết kiệm bộ nhớ.
+
+#### Các heuristic phổ biến trong 8-Puzzle:
+
+- Số ô sai vị trí (Misplaced tiles)
+
+- Tổng khoảng cách Manhattan
+
+<img src="images/InformedSearch.gif" alt="Informed Search Demo" width="1000"/>
+
+#### Nhận xét
+
+- A* tối ưu nếu heuristic nhanh và hiệu quả với bài toán nhưng không đảm bảo tìm ra giải pháp tối ưu nhất. Dùng khi cần lời giải nhanh chấp nhận không tối ưu.
+- Greedy Best-First Search Nhanh, tập trung mở rộng các trạng thái gần đich nhưng không đảm bảo lời giải tối ưu dễ mắc vào những không gian trạng thái phức tạp
+- IDA* là một giải pháp thay thế cho A* khi bộ nhớ bị hạn chế, có thể thời gian chạy sẽ lâu hơn.
+
+Tóm lại các thuật toán tìm kiếm có thông tin có sử dụng hàm tính chi phí (heuristic) giúp giảm số node phải duyệt trong đáng kể so nhóm thuật toán
 
 ### Local Search
 
@@ -78,14 +104,14 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 - Genetic Algorithm
 - Beam Search
 
-<img src="images/localsearch.gif" alt="Local Search Demo" width="600"/>
+<img src="images/localsearch.gif" alt="Local Search Demo" width="1000"/>
 
 ### Searching in Complex Environments
 
 - Belief Search
 - Partial Order Search (POS)
 
-<img src="images/Belief.gif" alt="Belief Search Demo" width="600"/>
+<img src="images/Belief.gif" alt="Belief Search Demo" width="1000"/>
 
 ### Constraint Satisfaction Problems
 
@@ -96,6 +122,9 @@ Một lời giải cho bài toán 8-Puzzle là một chuỗi các hành động 
 ### Reinforcement Learning
  
 - Q-learning
+
+<img src="images/q_learning.gif" alt="Q-learning Search Demo" width="800"/>
+
 
 ## Đóng góp
 Mọi đóng góp, ý kiến hoặc báo lỗi xin gửi về [GitHub repository](https://github.com/NDKhoa30102005/AI).
